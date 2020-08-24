@@ -1,0 +1,5 @@
+python-kubernetes-asyncio (11.0.0-snapshot) bullseye-truenas-unstable; urgency=medium
+
+  * Initial Release
+
+-- Waqar Ahmed <waqar@ixsystems.com> Sun, 24 Aug 2020 02:20:00 +0500
