@@ -13,6 +13,7 @@
 import io
 import json
 import logging
+import os
 import re
 import ssl
 
@@ -179,7 +180,8 @@ class RESTClientObject(object):
             r = RESTResponse(r, data)
 
             # log response body
-            logger.debug("response body: %s", r.data)
+            if os.environ.get('kubernetes_asyncio_debug_logs', 'false') == 'true':
+                logger.debug("response body: %s", r.data)
 
             if not 200 <= r.status <= 299:
                 raise ApiException(http_resp=r)
