@@ -38,6 +38,7 @@ KUBE_CONFIG_DEFAULT_LOCATION = os.environ.get('KUBECONFIG', '~/.kube/config')
 ENV_KUBECONFIG_PATH_SEPARATOR = ';' if platform.system() == 'Windows' else ':'
 PROVIDER_TYPE_OIDC = 'oidc'
 _temp_files = {}
+logging = logging.getLogger(__name__)
 
 
 def _cleanup_temp_files():
