@@ -62,7 +62,7 @@ async def create_from_yaml(
         yml_document_all = yaml.safe_load_all(f)
         api_exceptions = []
         # Load all documents from a single YAML file
-        for yml_document in yml_document_all:
+        for yml_document in filter(bool, yml_document_all):
             # If it is a list type, will need to iterate its items
             if "List" in yml_document["kind"]:
                 # Could be "List" or "Pod/Service/...List"
