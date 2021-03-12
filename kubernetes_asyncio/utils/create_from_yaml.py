@@ -63,7 +63,7 @@ async def create_from_yaml(
         api_exceptions = []
         k8s_objects = []
         # Load all documents from a single YAML file
-        for yml_document in yml_document_all:
+        for yml_document in filter(bool, yml_document_all):
             try:
                 created = await create_from_dict(k8s_client, yml_document,
                                                  verbose, namespace=namespace,
